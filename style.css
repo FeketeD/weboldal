@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Merriweather", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark-brown-tp);
+}
+
+body.scrolled {
+    background-color: white;
+}
+
+:root {
+    --light-brown: #F6F2EF;
+    --dark-brown: #533E2E;
+    --dark-brown-tp: rgba(83, 62, 46, 0.6);
+    --dark-brown-90: rgba(83, 62, 46, 0.9);
+    --brown: #C1A38C;
+    --faq-text: #62636A;
+
+    --font-size-16: 16px;
+    --font-size-20: 20px;
+}
+
+/* NAV */
+nav {
+    font-weight: bold;
+}
+
+.navbar.scrolled {
+    background-color: var(--dark-brown-tp);
+}
+
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    transition: width 0.5s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* HEADER */
+.hero-image {
+    background: url('images/haz.jpg') center/cover no-repeat;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* MAIN */
+main {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 300px;
+    z-index: 1;
+}
+
+main section {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    user-select: none;
+    display: block;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.dark-brown {
+    color: var(--dark-brown);
+}
+
+/* Rólam */
+#rolam {
+    background-color: var(--light-brown);
+    padding: 6.25rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#rolam p {
+    font-size: var(--font-size-20);
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Szolgáltatások */
+#szolgaltatasok {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6.25rem 0;
+}
+
+.service-text {
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.service-card img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    transition: background-color 0.5s ease;
+}
+
+.service-card .overlay h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.service-card .overlay p {
+    display: none;
+    margin-top: 1rem;
+    font-size: var(--font-size-20);
+}
+
+.service-card:hover img {
+    transform: scale(1.2);
+}
+
+.service-card:hover .overlay {
+    background-color: var(--dark-brown-90);
+}
+
+.service-card:hover .overlay h2 {
+    transform: translateY(-10px);
+}
+
+.service-card:hover .overlay p {
+    display: block;
+}
+
+/* GYIK */
+#gyik {
+    background-color: var(--light-brown);
+    padding: 6.25rem 0;
+}
+
+#gyik p {
+    font-size: var(--font-size-16);
+    color: var(--faq-text);
+}
+
+/* Accordion */
+.accordion {
+    margin-top: 2rem;
+}
+
+.accordion-item,
+.accordion-button,
+.accordion-body {
+    background-color: transparent !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.accordion-item {
+    border-bottom: 1px solid black !important;
+}
+
+.accordion-button {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.accordion-button::after {
+    filter: none !important;
+}
+
+/* Referencia */
+#referencia {
+    padding: 6.25rem 0;
+}
+
+.reference-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin-right: 48px;
+}
+
+.image-container img {
+    position: relative;
+    overflow: hidden;
+    width: 250px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.left-image {
+    border-radius: 20px 0 0 20px;
+}
+
+.right-image {
+    border-radius: 0 20px 20px 0;
+}
+
+.reference-text {
+    font-size: 18px;
+}
+
+.reference-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 300px;
+    background-color: var(--dark-brown-tp);
+}
+
+.btn-reference {
+    background-color: var(--dark-brown);
+    border: none;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+}
+
+.btn-reference:hover {
+    background-color: #36291e;
+}
+
+/* GALLERY */
+#gallery{
+    width: 100%;
+    height: 100vh;
+    padding: 100px 0;
+}
+
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 3rem 2rem;
+}
+
+.footer-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copy,
+.copy2 {
+    position: relative;
+    cursor: pointer;
+}
+
+.copy::after {
+    content: 'Másolva!';
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.copy.show-tooltip::after {
+    opacity: 1;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    margin-bottom: 1.25rem;
+}
+
+footer span:hover,
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .image-container img {
+        width: 200px;
+        height: 500px;
+    }
+
+    .reference-text {
+        font-size: var(--font-size-16);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    #rolam,
+    #szolgaltatasok,
+    #gyik,
+    #referencia,
+    #gallery {
+        padding: 3.125rem;
+    }
+
+    #rolam p,
+    .service-text {
+        text-align: justify;
+        margin: 0.625rem;
+    }
+
+    .service-card {
+        margin-bottom: 1.25rem;
+    }
+
+    .image-container {
+        margin-bottom: 1.25rem !important;
+        margin-right: 0;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-height: 400px;
+    }
+
+    .reference-body {
+        flex-direction: column;
+    }
+
+    .reference-overlay {
+        min-height: 500px;
+    }
+
+    .mb-5 {
+        margin-bottom: 1.25rem !important;
+    }
+
+    .mt-5 {
+        margin-top: 1.25rem !important;
+    }
+
+    .sticky-top {
+        position: relative;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-body {
+        flex-direction: column;
+    }
+    main{
+        margin-bottom: 500px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 1rem;
+}
+
+.grid-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+.wide.tall {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  .grid-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
+
+  .wide,
+  .tall,
+  .wide.tall {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+}
